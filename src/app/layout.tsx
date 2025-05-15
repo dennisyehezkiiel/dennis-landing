@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Tiny5, Silkscreen, Poppins } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Tiny5,
+  Silkscreen,
+  Poppins,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -23,7 +29,7 @@ export const silkscreen = Silkscreen({
 });
 
 export const poppins = Poppins({
-  weight: "400",
+  weight: ["300", "400", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -40,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-      className={silkscreen.className}
+        className={silkscreen.className}
         // className={`${tiny5.variable} antialiased font-tiny`}
       >
         {children}
