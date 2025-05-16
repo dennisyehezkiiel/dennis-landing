@@ -1,8 +1,6 @@
 "use client";
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import { poppins, tiny5 } from "../layout";
-import Image from "next/image";
 import Hero from "./components/hero";
 import Projects from "./components/projects";
 
