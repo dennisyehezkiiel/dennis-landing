@@ -135,7 +135,7 @@ export default function Landing() {
             pointerEvents: "none",
           }}
         >
-          <img src={"/assets/earth.svg"} style={{ width: "60%" }} />
+          {/* <img src={"/assets/earth.svg"} style={{ width: "60%" }} /> */}
         </ParallaxLayer>
 
         <ParallaxLayer

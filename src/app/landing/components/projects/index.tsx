@@ -112,10 +112,10 @@ const Projects = () => {
         </div>
       </div>
       <div
-        className={`flex flex-col items-center justify-center col-span-2 w-full`}
+        className={`${poppins.className} flex flex-col items-cente justify-center col-span-2 w-full`}
       >
         <p className="text-[60px] text-white font-semibold">Pixel alchemist</p>
-        <p className={`${poppins.className} text-white`}>
+        <p className={`text-white`}>
           turning Figma into fast, flawless web apps. 3 years React wizardry,
           clean code addict, always shipping smooth vibes
         </p>
