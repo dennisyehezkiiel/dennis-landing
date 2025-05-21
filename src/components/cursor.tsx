@@ -50,7 +50,7 @@ export default function BlurryCursor({ isActive }: any) {
     <div className="relative">
       <div
         style={{
-          backgroundColor: "#457ec4",
+          backgroundColor: "#151c1e",
           width: size,
           height: size,
           filter: `blur(${isActive ? 30 : 0}px)`,

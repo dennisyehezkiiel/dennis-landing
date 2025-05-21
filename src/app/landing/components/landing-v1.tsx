@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef } from "react";
 import { Parallax, ParallaxLayer, IParallax } from "@react-spring/parallax";
-import Hero from "./components/hero";
-import Projects from "./components/projects";
+import Hero from "./hero";
+import Projects from "./projects";
 
 // Little helpers ...
 const url = (name: string, wrap = false) =>
@@ -14,30 +14,55 @@ const url = (name: string, wrap = false) =>
 
 export default function Landing() {
   const parallax = useRef<IParallax>(null!);
-  const parallaxProject = useRef<IParallax>(null!);
 
   return (
     <div style={{ width: "100%", height: "100%", background: "#253237" }}>
-      <Parallax ref={parallax} pages={4}>
-        <ParallaxLayer offset={0} speed={0.2} style={{ opacity: 0.2 }}>
-          <img
-            src={"/assets/cloud.svg"}
-            style={{ display: "block", width: "20%", marginLeft: "70%" }}
-          />
-          <img
-            src={"/assets/cloud.svg"}
-            style={{ display: "block", width: "30%", marginLeft: "5%" }}
-          />
-        </ParallaxLayer>
+      <Parallax ref={parallax} pages={3}>
+        <ParallaxLayer
+          offset={1}
+          speed={1}
+          style={{ backgroundColor: "#805E73" }}
+        />
+        <ParallaxLayer
+          offset={2}
+          speed={1}
+          style={{ backgroundColor: "#87BCDE" }}
+        />
 
-        <ParallaxLayer offset={0.6} speed={0.6} style={{ opacity: 0.1 }}>
+        <div>
+          <div
+          // ref={cardRef}
+          // style={{ willChange: "transform" }}
+          >
+            {/* <ParallaxLayer
+              offset={0}
+              speed={0}
+              factor={3}
+              style={{
+                backgroundImage: url('stars', true),
+                backgroundSize: 'cover',
+              }}
+            /> */}
+            <ParallaxLayer
+              style={{
+                backgroundSize: "cover",
+              }}
+            >
+              <div>
+              <img src={"/assets/stars.svg"} style={{ width: "100%" }} />
+              </div>
+            </ParallaxLayer>
+          </div>
+        </div>
+
+        <ParallaxLayer
+          offset={1.3}
+          speed={-0.3}
+          style={{ pointerEvents: "none" }}
+        >
           <img
-            src={"/assets/cloud.svg"}
-            style={{ display: "block", width: "20%", marginLeft: "55%" }}
-          />
-          <img
-            src={"/assets/cloud.svg"}
-            style={{ display: "block", width: "10%", marginLeft: "15%" }}
+            src={"/assets/satellite4.svg"}
+            style={{ width: "15%", marginLeft: "80%" }}
           />
         </ParallaxLayer>
 
@@ -59,7 +84,7 @@ export default function Landing() {
           />
           <img
             src={"/assets/cloud.svg"}
-            style={{ display: "block", width: "20%", marginLeft: "4%" }}
+            style={{ display: "block", width: "20%", marginLeft: "40%" }}
           />
         </ParallaxLayer>
 
@@ -74,14 +99,14 @@ export default function Landing() {
           />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.2 }}>
+        <ParallaxLayer offset={1.6} speed={-0.1} style={{ opacity: 0.4 }}>
           <img
             src={"/assets/cloud.svg"}
             style={{ display: "block", width: "20%", marginLeft: "60%" }}
           />
           <img
             src={"/assets/cloud.svg"}
-            style={{ display: "block", width: "25%", marginLeft: "26%" }}
+            style={{ display: "block", width: "25%", marginLeft: "30%" }}
           />
           <img
             src={"/assets/cloud.svg"}
@@ -89,7 +114,7 @@ export default function Landing() {
           />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.3 }}>
+        <ParallaxLayer offset={2.6} speed={0.4} style={{ opacity: 0.6 }}>
           <img
             src={"/assets/cloud.svg"}
             style={{ display: "block", width: "20%", marginLeft: "5%" }}
@@ -101,80 +126,66 @@ export default function Landing() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={0}
-          speed={0.1}
-          onClick={() => parallax.current.scrollTo(0)}
+          offset={2.5}
+          speed={-0.4}
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundImage: "url(/assets/stars.svg)",
-            backgroundSize: "cover",
+            pointerEvents: "none",
           }}
         >
-          {/* <Hero /> */}
-        </ParallaxLayer>
-
-        <ParallaxLayer sticky={{ start: 0, end: 3 }}>
-          <div className="flex items-center justify-center h-screen">
-            <Hero />
-          </div>
+          {/* <img src={"/assets/earth.svg"} style={{ width: "60%" }} /> */}
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={1}
+          offset={2}
+          speed={-0.3}
+          // style={{
+          //   backgroundSize: "80%",
+          //   backgroundPosition: "center",
+          //   backgroundImage: url("clients", true),
+          // }}
+        />
+
+        <ParallaxLayer
+          offset={0}
           speed={0.1}
           onClick={() => parallax.current.scrollTo(1)}
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundImage: "url(/assets/stars.svg)",
-            backgroundSize: "cover",
           }}
         >
-          {/* <Hero /> */}
+          <Hero />
         </ParallaxLayer>
 
         <ParallaxLayer
+          offset={1}
+          speed={0.1}
+          onClick={() => parallax.current.scrollTo(2)}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "start",
+          }}
+        >
+          <Projects />
+        </ParallaxLayer>
+
+        {/* <ParallaxLayer
           offset={2}
-          speed={0.6}
-          onClick={() => parallax.current.scrollTo(2)}
+          speed={-0}
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundImage: "url(/assets/stars.svg)",
-            backgroundSize: "cover",
           }}
+          // onClick={() => parallax.current.scrollTo(0)}
         >
-          {/* <Hero /> */}
-          {/* <div className="bg-black bg-gradient-to-t from-white to-black h-screen w-full">
-            haha
-          </div> */}
-        </ParallaxLayer>
-        <ParallaxLayer
-          offset={3}
-          speed={0.6}
-          sticky={{ start: 3, end: 3 }}
-          onClick={() => parallax.current.scrollTo(2)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundImage: "url(/assets/stars.svg)",
-            backgroundSize: "cover",
-          }}
-        >
-          {/* <Hero /> */}
-          {/* <div className="bg-black bg-gradient-to-t from-white to-black h-screen w-full"> */}
-          <div className="bg-[#151c1e] min-h-screen w-full">
-            {/* <Projects /> */}
-            {/* <Parallax pages={1}>
-              
-            </Parallax> */}
-          </div>
-        </ParallaxLayer>
+          <img src={url("clients-main")} style={{ width: "40%" }} />
+        </ParallaxLayer> */}
       </Parallax>
     </div>
   );

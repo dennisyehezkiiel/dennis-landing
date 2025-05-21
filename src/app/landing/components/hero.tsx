@@ -63,7 +63,7 @@ const Hero = () => {
             onMouseLeave={() => {
               setIsActive(false);
             }}
-            className={`flex text-center text-[18px] space-x-1 ${poppins.className}`}
+            className={`flex text-center text-[22px] space-x-1 `}
           >
             <p>
               i architect bugs into features & vibes into functions. deploy
@@ -71,7 +71,7 @@ const Hero = () => {
             </p>
             <p className="text-red-200">not drama.</p>
           </div>
-          <div
+          {/* <div
             ref={cardRef}
             style={{ willChange: "transform" }}
             className="bg-gray-600/30 rounded-full px-12 py-2 w-fit"
@@ -79,7 +79,7 @@ const Hero = () => {
             <p className={`text-[18px] ${poppins.className}`}>
               Jakarta, Indonesia
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
