@@ -24,3 +24,62 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes scroll-linear {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes scroll-linear-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll {
+  display: inline-flex;
+  /* width: 200%;  */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-container {
+  display: flex;
+  gap: 1.5rem; /* Adjust gap as needed */
+  animation: scroll 40s linear infinite;
+  width: max-content; /* Prevent wrapping */
+}
+
+.carousel-no-scroll {
+  display: flex;
+  gap: 1.5rem; /* Adjust gap as needed */
+  /* animation: scroll 40s linear infinite; */
+  width: max-content;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Webkit browsers (Chrome, Safari, Edge) */
+}
+
+.scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -ms-overflow-style: none; /* For Internet Explorer */
+  scrollbar-width: none; /* For Firefox */
+}
